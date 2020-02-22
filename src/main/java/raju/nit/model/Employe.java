@@ -1,11 +1,28 @@
 package raju.nit.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "emptab")
 public class Employe {
 
+	@Id
+	@GeneratedValue
+	@Column(name = "id")
 	private Integer empId;
+
+	@Column(name = "name")
 	private String empName;
-	private String sal;
-	private String address;
+
+	@Column(name = "sal")
+	private String empSal;
+
+	@Column(name = "addr")
+	private String empAaddress;
 
 	public Employe() {
 		super();
@@ -27,25 +44,26 @@ public class Employe {
 		this.empName = empName;
 	}
 
-	public String getSal() {
-		return sal;
+	public String getEmpSal() {
+		return empSal;
 	}
 
-	public void setSal(String sal) {
-		this.sal = sal;
+	public void setEmpSal(String empSal) {
+		this.empSal = empSal;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getEmpAaddress() {
+		return empAaddress;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setEmpAaddress(String empAaddress) {
+		this.empAaddress = empAaddress;
 	}
 
 	@Override
 	public String toString() {
-		return "Employe [empId=" + empId + ", empName=" + empName + ", sal=" + sal + ", address=" + address + "]";
+		return "Employe [empId=" + empId + ", empName=" + empName + ", empSal=" + empSal + ", empAaddress="
+				+ empAaddress + "]";
 	}
 
 }
